@@ -9,7 +9,10 @@ export function copyFiles(inputFolderPath: string, outputFolderPath: string, fil
         const from = resolve(inputFolderPath, pathToAsset);
         const to = resolve(outputFolderPath, pathToAsset);
 
+        logger.info(pathToAsset, `${outputDir} ${pathToAsset} ${from} ${to}`);
+
         shell.mkdir('-p', outputDir);
+
         copyFileSync(from, to);
 
         logger.copy(pathToAsset);
